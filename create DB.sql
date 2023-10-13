@@ -67,8 +67,8 @@ insert into tipos_cultivos(tipo_cultivo)
 create procedure SP_INSERTAR_CULTIVO
 	@fecha datetime,
 	@id_tipo_cul int,
-	@descripcion varchar,
-	@genetica varchar
+	@descripcion varchar(250),
+	@genetica varchar(250)
 AS
 BEGIN
 	INSERT INTO cultivos VALUES(@fecha, @id_tipo_cul, @descripcion, @genetica)
@@ -81,7 +81,13 @@ BEGIN
 	SELECT * FROM cultivos
 END;
 
-
+CREATE PROCEDURE SP_CONSULTAR_CULTIVO
+	@codigo int
+AS
+BEGIN
+	SELECT * FROM cultivos
+	where id_cultivo = @codigo
+END;
 
 select * from tipos_cultivos
 
