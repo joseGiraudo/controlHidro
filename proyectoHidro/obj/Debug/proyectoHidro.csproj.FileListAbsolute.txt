@@ -1,0 +1,13 @@
+C:\Users\joseg\OneDrive\Documentos\Programacion\controlHidro\proyectoHidro\bin\Debug\proyectoHidro.exe.config
+C:\Users\joseg\OneDrive\Documentos\Programacion\controlHidro\proyectoHidro\bin\Debug\proyectoHidro.exe
+C:\Users\joseg\OneDrive\Documentos\Programacion\controlHidro\proyectoHidro\bin\Debug\proyectoHidro.pdb
+C:\Users\joseg\OneDrive\Documentos\Programacion\controlHidro\proyectoHidro\obj\Debug\proyectoHidro.csproj.AssemblyReference.cache
+C:\Users\joseg\OneDrive\Documentos\Programacion\controlHidro\proyectoHidro\obj\Debug\proyectoHidro.csproj.SuggestedBindingRedirects.cache
+C:\Users\joseg\OneDrive\Documentos\Programacion\controlHidro\proyectoHidro\obj\Debug\proyectoHidro.Presentacion.FrmCultivo.resources
+C:\Users\joseg\OneDrive\Documentos\Programacion\controlHidro\proyectoHidro\obj\Debug\proyectoHidro.Presentacion.FrmNuevoCultivo.resources
+C:\Users\joseg\OneDrive\Documentos\Programacion\controlHidro\proyectoHidro\obj\Debug\proyectoHidro.FrmPrincipal.resources
+C:\Users\joseg\OneDrive\Documentos\Programacion\controlHidro\proyectoHidro\obj\Debug\proyectoHidro.Properties.Resources.resources
+C:\Users\joseg\OneDrive\Documentos\Programacion\controlHidro\proyectoHidro\obj\Debug\proyectoHidro.csproj.GenerateResource.cache
+C:\Users\joseg\OneDrive\Documentos\Programacion\controlHidro\proyectoHidro\obj\Debug\proyectoHidro.csproj.CoreCompileInputs.cache
+C:\Users\joseg\OneDrive\Documentos\Programacion\controlHidro\proyectoHidro\obj\Debug\proyectoHidro.exe
+C:\Users\joseg\OneDrive\Documentos\Programacion\controlHidro\proyectoHidro\obj\Debug\proyectoHidro.pdb

@@ -25,5 +25,15 @@ namespace proyectoHidro.Entidades
         {
             List<Control> lControles = new List<Control>();
         }
+
+        public Cultivo(int cod, int tipo, string desc, DateTime fecha, string genetica)
+        {
+            this.codCultivo = cod;
+            this.tipoCultivo = tipo;
+            this.descripcion = desc;
+            this.fechaInicio = fecha;
+            this.genetica = genetica;
+            List<Control> lControles = new List<Control>();
+        }
     }
 }

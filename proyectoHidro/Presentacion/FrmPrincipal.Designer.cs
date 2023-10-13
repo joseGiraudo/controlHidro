@@ -33,14 +33,14 @@
             this.cultivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvCultivos = new System.Windows.Forms.DataGridView();
             this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGenetica = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAccion = new System.Windows.Forms.DataGridViewButtonColumn();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCultivos)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -72,43 +72,46 @@
             // nuevoToolStripMenuItem
             // 
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.nuevoToolStripMenuItem.Text = "Nuevo";
             this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
             // 
             // consultarToolStripMenuItem
             // 
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             // 
-            // dataGridView1
+            // dgvCultivos
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvCultivos.AllowUserToAddRows = false;
+            this.dgvCultivos.AllowUserToDeleteRows = false;
+            this.dgvCultivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCultivos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colCodigo,
             this.colGenetica,
             this.colFecha,
             this.colTipo,
             this.colAccion});
-            this.dataGridView1.Location = new System.Drawing.Point(43, 115);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(569, 150);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvCultivos.Location = new System.Drawing.Point(44, 56);
+            this.dgvCultivos.Name = "dgvCultivos";
+            this.dgvCultivos.ReadOnly = true;
+            this.dgvCultivos.Size = new System.Drawing.Size(594, 211);
+            this.dgvCultivos.TabIndex = 1;
+            this.dgvCultivos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCultivos_CellContentClick);
             // 
             // colCodigo
             // 
             this.colCodigo.HeaderText = "Codigo";
             this.colCodigo.Name = "colCodigo";
             this.colCodigo.ReadOnly = true;
+            this.colCodigo.Width = 50;
             // 
             // colGenetica
             // 
             this.colGenetica.HeaderText = "Genetica";
             this.colGenetica.Name = "colGenetica";
             this.colGenetica.ReadOnly = true;
+            this.colGenetica.Width = 150;
             // 
             // colFecha
             // 
@@ -128,13 +131,14 @@
             this.colAccion.HeaderText = "";
             this.colAccion.Name = "colAccion";
             this.colAccion.ReadOnly = true;
+            this.colAccion.Width = 125;
             // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(707, 303);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvCultivos);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmPrincipal";
@@ -142,7 +146,7 @@
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCultivos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,7 +159,7 @@
         private System.Windows.Forms.ToolStripMenuItem cultivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvCultivos;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGenetica;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFecha;

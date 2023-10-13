@@ -1,4 +1,7 @@
-﻿using System;
+﻿using proyectoHidro.Datos.Interfaz;
+using proyectoHidro.Datos.Implementacion;
+using proyectoHidro.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,8 +9,43 @@ using System.Threading.Tasks;
 
 namespace proyectoHidro.Servicios
 {
-    public class Servicio
+    public class Servicio : IServicio
     {
-        
+        private ICultivoDao cultivoDao;
+
+        public Servicio()
+        {
+            cultivoDao = new CultivoDao();
+        }
+
+        public bool ActualizarCultivo()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool CargarCultivo()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool EliminarCultivo()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Control> TraerControles()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Cultivo> TraerCultivos()
+        {
+            return cultivoDao.ObtenerCultivos();
+        }
+
+        public Cultivo TraerCultivo(int cod)
+        {
+            return cultivoDao.ObtenerCultivo(cod);
+        }
     }
 }

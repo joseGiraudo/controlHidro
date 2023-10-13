@@ -9,7 +9,14 @@ namespace proyectoHidro.Datos.Interfaz
 {
     interface ICultivoDao
     {
+        int ProximoCultivo();
         List<Control> ObtenerControles();
+        List<Cultivo> ObtenerCultivos();
+        Cultivo ObtenerCultivo(int codigo);
+
+        bool Crear(Cultivo cultivo);
+        bool Actualizar(Cultivo cultivo);
+        bool Eliminar(Cultivo cultivo);
 
     }
 }

@@ -1,3 +1,5 @@
+drop database DBControlHidro;
+
 Create database DBControlHidro;
 
 
@@ -17,10 +19,9 @@ create table tipos_cultivos(
 
 create table cultivos(
 	id_cultivo int identity(1,1),
-	nombre varchar(100) not null,
 	fecha_inicio datetime not null,
 	id_tipo_cultivo int not null,
-	observaciones varchar(250),
+	descripcion varchar(250),
 	genetica varchar(250)
 	constraint pk_cultivos primary key (id_cultivo),
 	constraint fk_cultivos_tipos foreign key(id_tipo_cultivo) references tipos_cultivos(id_tipo_cultivo)
@@ -49,14 +50,6 @@ insert into tipos_controles(tipo_control)
 insert into tipos_controles(tipo_control)
 	values('Cambio de Agua');
 
-select * from tipos_controles;
-
--- 08/06 
-use DBControlHidro;
-
-select * from tipos_cultivos;
-
-select * from controles;
 
 insert into tipos_cultivos(tipo_cultivo)
 	values('Automatica');
@@ -69,3 +62,28 @@ insert into tipos_cultivos(tipo_cultivo)
 
 insert into tipos_cultivos(tipo_cultivo)
 	values('Regular Feminizada');
+
+
+create procedure SP_INSERTAR_CULTIVO
+	@fecha datetime,
+	@id_tipo_cul int,
+	@descripcion varchar,
+	@genetica varchar
+AS
+BEGIN
+	INSERT INTO cultivos VALUES(@fecha, @id_tipo_cul, @descripcion, @genetica)
+END
+
+
+CREATE PROCEDURE SP_CONSULTAR_CULTIVOS
+AS
+BEGIN
+	SELECT * FROM cultivos
+END;
+
+
+
+select * from tipos_cultivos
+
+INSERT INTO cultivos
+VALUES('20230531', 1, 'descripcion 123asdnoa', 'Tubby (Peyote Cookies x Apolo)')
