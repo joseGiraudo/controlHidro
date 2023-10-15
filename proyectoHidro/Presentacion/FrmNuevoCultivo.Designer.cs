@@ -35,8 +35,10 @@
             this.cboTipoCultivo = new System.Windows.Forms.ComboBox();
             this.lblGenetica = new System.Windows.Forms.Label();
             this.txtGenetica = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDesc = new System.Windows.Forms.TextBox();
             this.lblDesc = new System.Windows.Forms.Label();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblCodCultivo
@@ -51,15 +53,15 @@
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(287, 31);
+            this.lblFecha.Location = new System.Drawing.Point(221, 34);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(43, 13);
+            this.lblFecha.Size = new System.Drawing.Size(70, 13);
             this.lblFecha.TabIndex = 1;
-            this.lblFecha.Text = "Fecha: ";
+            this.lblFecha.Text = "Fecha inicio: ";
             // 
             // dtpFecha
             // 
-            this.dtpFecha.Location = new System.Drawing.Point(349, 31);
+            this.dtpFecha.Location = new System.Drawing.Point(297, 31);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(200, 20);
             this.dtpFecha.TabIndex = 2;
@@ -97,28 +99,50 @@
             this.txtGenetica.Size = new System.Drawing.Size(143, 20);
             this.txtGenetica.TabIndex = 6;
             // 
-            // textBox1
+            // txtDesc
             // 
-            this.textBox1.Location = new System.Drawing.Point(290, 102);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(143, 20);
-            this.textBox1.TabIndex = 8;
+            this.txtDesc.Location = new System.Drawing.Point(313, 124);
+            this.txtDesc.Name = "txtDesc";
+            this.txtDesc.Size = new System.Drawing.Size(143, 20);
+            this.txtDesc.TabIndex = 8;
             // 
             // lblDesc
             // 
             this.lblDesc.AutoSize = true;
-            this.lblDesc.Location = new System.Drawing.Point(286, 74);
+            this.lblDesc.Location = new System.Drawing.Point(309, 96);
             this.lblDesc.Name = "lblDesc";
             this.lblDesc.Size = new System.Drawing.Size(84, 13);
             this.lblDesc.TabIndex = 7;
             this.lblDesc.Text = "Observaciones: ";
             // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(297, 242);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(141, 23);
+            this.btnAgregar.TabIndex = 9;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(78, 242);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(141, 23);
+            this.btnCancelar.TabIndex = 10;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // FrmNuevoCultivo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(706, 318);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(543, 278);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.txtDesc);
             this.Controls.Add(this.lblDesc);
             this.Controls.Add(this.txtGenetica);
             this.Controls.Add(this.lblGenetica);
@@ -144,7 +168,9 @@
         private System.Windows.Forms.ComboBox cboTipoCultivo;
         private System.Windows.Forms.Label lblGenetica;
         private System.Windows.Forms.TextBox txtGenetica;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDesc;
         private System.Windows.Forms.Label lblDesc;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

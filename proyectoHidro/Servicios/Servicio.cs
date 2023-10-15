@@ -23,9 +23,9 @@ namespace proyectoHidro.Servicios
             throw new NotImplementedException();
         }
 
-        public bool CargarCultivo()
+        public bool CargarCultivo(Cultivo cultivo)
         {
-            throw new NotImplementedException();
+            return cultivoDao.Crear(cultivo);
         }
 
         public bool EliminarCultivo()
@@ -46,6 +46,16 @@ namespace proyectoHidro.Servicios
         public Cultivo TraerCultivo(int cod)
         {
             return cultivoDao.ObtenerCultivo(cod);
+        }
+
+        public List<TipoCultivo> TraerTipos()
+        {
+            return cultivoDao.ObtenerTipos();
+        }
+
+        public int ProximoCultivo()
+        {
+            return cultivoDao.ProximoCultivo();
         }
     }
 }

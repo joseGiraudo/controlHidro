@@ -14,6 +14,8 @@ namespace proyectoHidro.Datos.Interfaz
         List<Cultivo> ObtenerCultivos();
         Cultivo ObtenerCultivo(int codigo);
 
+        List<TipoCultivo> ObtenerTipos();
+
         bool Crear(Cultivo cultivo);
         bool Actualizar(Cultivo cultivo);
         bool Eliminar(Cultivo cultivo);

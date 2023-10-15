@@ -52,6 +52,7 @@
     <Compile Include="Datos\Parametro.cs" />
     <Compile Include="Entidades\Control.cs" />
     <Compile Include="Entidades\Cultivo.cs" />
+    <Compile Include="Entidades\TipoCultivo.cs" />
     <Compile Include="Presentacion\FrmCultivo.cs">
       <SubType>Form</SubType>
     </Compile>
