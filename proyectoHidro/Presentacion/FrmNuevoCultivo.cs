@@ -25,6 +25,15 @@ namespace proyectoHidro.Presentacion
             lblCodCultivo.Text = "Cultivo n° " + nroCultivo.ToString();
         }
 
+        private void LimpiarForm()
+        {
+            nroCultivo = servicio.ProximoCultivo();
+            lblCodCultivo.Text = "Cultivo n° " + nroCultivo.ToString();
+            txtDesc.Text = "";
+            txtGenetica.Text = "";
+            cboTipoCultivo.SelectedIndex = -1;
+        }
+
         private void FrmNuevoCultivo_Load(object sender, EventArgs e)
         {
             CargarTipos();
@@ -56,6 +65,7 @@ namespace proyectoHidro.Presentacion
             if (servicio.CargarCultivo(cultivo))
             {
                 MessageBox.Show("Se cargo con exito el cultivo");
+                LimpiarForm();
             }
         }
     }
