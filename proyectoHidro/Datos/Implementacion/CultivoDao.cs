@@ -69,15 +69,90 @@ namespace proyectoHidro.Datos.Implementacion
             }
             return result;
         }
+        public bool Crear(Control control)
+        {
+            bool result = true;
+            SqlConnection connection = HelperDAO.ObtenerInstancia().GetConnection();
+            SqlTransaction transaction = null;
+
+            try
+            {
+                connection.Open();
+                transaction = connection.BeginTransaction();
+
+                SqlCommand command = new SqlCommand();
+                command.Connection = connection;
+                command.Transaction = transaction;
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "SP_INSERTAR_CONTROL";
+
+                command.Parameters.AddWithValue("@id_tipo_control", control.TipoControl);
+                command.Parameters.AddWithValue("@fecha", control.FechaControl);
+                command.Parameters.AddWithValue("@id_cultivo", control.CodCultivo);
+                command.Parameters.AddWithValue("@ph", control.Ph);
+                command.Parameters.AddWithValue("@ppm", control.Ppm);
+                command.Parameters.AddWithValue("@ec", control.Ec);
+                command.Parameters.AddWithValue("@observacion", control.Descripcion);
+
+                SqlParameter param = new SqlParameter();
+                param.ParameterName = "@nro";
+                param.SqlDbType = SqlDbType.Int;
+                param.Direction = ParameterDirection.Output;
+                command.Parameters.Add(param);
+
+                command.ExecuteNonQuery();
+
+                int nro = (int)param.Value;
+
+                transaction.Commit();
+
+            }
+            catch (Exception ex)
+            {
+                if (transaction != null)
+                {
+                    transaction.Rollback();
+                    result = false;
+                }
+            }
+            finally
+            {
+                if (connection != null && connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
+            return result;
+        }
 
         public bool Eliminar(Cultivo cultivo)
         {
             throw new NotImplementedException();
         }
 
-        public List<Control> ObtenerControles()
+        public List<Control> ObtenerControles(int idCultivo)
         {
-            throw new NotImplementedException();
+            List<Control> list = new List<Control>();
+            List<Parametro> lParam = new List<Parametro>();
+            Parametro param = new Parametro("codigo", idCultivo);
+            lParam.Add(param);
+
+            DataTable tabla = HelperDAO.ObtenerInstancia().Consultar("SP_CONSULTAR_CONTROLES", lParam);
+
+            foreach(DataRow r in tabla.Rows)
+            {
+                Control c = new Control();
+                c.CodControl = Convert.ToInt32(r[0].ToString());
+                c.TipoControl = Convert.ToInt32(r[1].ToString());
+                c.FechaControl = DateTime.Parse(r[2].ToString());
+                c.CodCultivo = idCultivo;
+                c.Ph = Convert.ToDouble(r[4].ToString());
+                c.Ppm = Convert.ToDouble(r[5].ToString());
+                c.Ec = Convert.ToDouble(r[6].ToString());
+                c.Descripcion = r[7].ToString();
+                list.Add(c);
+            }
+            return list;
         }
 
 
@@ -120,15 +195,28 @@ namespace proyectoHidro.Datos.Implementacion
             return cultivos;
         }
 
-        public List<TipoCultivo> ObtenerTipos()
+        public List<TipoC> ObtenerTiposCultivos()
         {
-            List<TipoCultivo> tipos = new List<TipoCultivo>();
+            List<TipoC> tipos = new List<TipoC>();
             DataTable tabla = HelperDAO.ObtenerInstancia().Consultar("SP_CONSULTAR_TIPOS_CULTIVOS");
             foreach(DataRow row in tabla.Rows)
             {
                 int cod = Convert.ToInt32(row[0].ToString());
                 string tipo = row[1].ToString();
-                TipoCultivo tipoC = new TipoCultivo(cod, tipo);
+                TipoC tipoC = new TipoC(cod, tipo);
+                tipos.Add(tipoC);
+            }
+            return tipos;
+        }
+        public List<TipoC> ObtenerTiposControles()
+        {
+            List<TipoC> tipos = new List<TipoC>();
+            DataTable tabla = HelperDAO.ObtenerInstancia().Consultar("SP_CONSULTAR_TIPOS_CONTROLES");
+            foreach (DataRow row in tabla.Rows)
+            {
+                int cod = Convert.ToInt32(row[0].ToString());
+                string tipo = row[1].ToString();
+                TipoC tipoC = new TipoC(cod, tipo);
                 tipos.Add(tipoC);
             }
             return tipos;

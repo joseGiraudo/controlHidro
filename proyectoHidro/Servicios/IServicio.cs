@@ -9,13 +9,15 @@ namespace proyectoHidro.Servicios
 {
     interface IServicio
     {
-        List<TipoCultivo> TraerTipos();
+        List<TipoC> TraerTiposCultivos();
+        List<TipoC> TraerTiposControles();
         List<Cultivo> TraerCultivos();
         Cultivo TraerCultivo(int codCultivo);
-        List<Control> TraerControles();
+        List<Control> TraerControles(int codCultivo);
         int ProximoCultivo();
         bool CargarCultivo(Cultivo cultivo);
         bool ActualizarCultivo();
         bool EliminarCultivo();
+        bool CargarControl(Control control);
     }
 }

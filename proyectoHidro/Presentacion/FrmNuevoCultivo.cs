@@ -24,6 +24,10 @@ namespace proyectoHidro.Presentacion
             nroCultivo = servicio.ProximoCultivo();
             lblCodCultivo.Text = "Cultivo n° " + nroCultivo.ToString();
         }
+        private void FrmNuevoCultivo_Load(object sender, EventArgs e)
+        {
+            CargarTipos();
+        }
 
         private void LimpiarForm()
         {
@@ -34,14 +38,10 @@ namespace proyectoHidro.Presentacion
             cboTipoCultivo.SelectedIndex = -1;
         }
 
-        private void FrmNuevoCultivo_Load(object sender, EventArgs e)
-        {
-            CargarTipos();
-        }
 
         private void CargarTipos()
         {
-            cboTipoCultivo.DataSource = servicio.TraerTipos();
+            cboTipoCultivo.DataSource = servicio.TraerTiposControles();
             cboTipoCultivo.ValueMember = "Codigo";
             cboTipoCultivo.DisplayMember = "Tipo";
             cboTipoCultivo.DropDownStyle = ComboBoxStyle.DropDownList;

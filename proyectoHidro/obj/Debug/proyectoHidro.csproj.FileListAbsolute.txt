@@ -11,3 +11,4 @@ C:\Users\joseg\OneDrive\Documentos\Programacion\controlHidro\proyectoHidro\obj\D
 C:\Users\joseg\OneDrive\Documentos\Programacion\controlHidro\proyectoHidro\obj\Debug\proyectoHidro.csproj.CoreCompileInputs.cache
 C:\Users\joseg\OneDrive\Documentos\Programacion\controlHidro\proyectoHidro\obj\Debug\proyectoHidro.exe
 C:\Users\joseg\OneDrive\Documentos\Programacion\controlHidro\proyectoHidro\obj\Debug\proyectoHidro.pdb
+C:\Users\joseg\OneDrive\Documentos\Programacion\controlHidro\proyectoHidro\obj\Debug\proyectoHidro.Presentacion.FrmNuevoControl.resources

@@ -10,12 +10,12 @@ namespace proyectoHidro.Datos.Interfaz
     interface ICultivoDao
     {
         int ProximoCultivo();
-        List<Control> ObtenerControles();
+        List<Control> ObtenerControles(int idCultivo);
         List<Cultivo> ObtenerCultivos();
         Cultivo ObtenerCultivo(int codigo);
-
-        List<TipoCultivo> ObtenerTipos();
-
+        List<TipoC> ObtenerTiposCultivos();
+        List<TipoC> ObtenerTiposControles();
+        bool Crear(Control control);
         bool Crear(Cultivo cultivo);
         bool Actualizar(Cultivo cultivo);
         bool Eliminar(Cultivo cultivo);

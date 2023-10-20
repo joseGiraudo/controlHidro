@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace proyectoHidro.Entidades
 {
-    public class TipoCultivo
+    public class TipoC
     {
         private int codigo;
         private string tipo;
@@ -14,8 +14,8 @@ namespace proyectoHidro.Entidades
         public int Codigo { get { return codigo; } set { codigo = value; } }
         public string Tipo { get { return tipo; } set { tipo = value; } }
 
-        public TipoCultivo() { }
-        public TipoCultivo(int cod, string tipo)
+        public TipoC() { }
+        public TipoC(int cod, string tipo)
         {
             this.codigo = cod;
             this.tipo = tipo;

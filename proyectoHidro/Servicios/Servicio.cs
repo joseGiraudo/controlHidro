@@ -33,9 +33,14 @@ namespace proyectoHidro.Servicios
             throw new NotImplementedException();
         }
 
-        public List<Control> TraerControles()
+        public bool CargarControl(Control control)
         {
-            throw new NotImplementedException();
+            return cultivoDao.Crear(control);
+        }
+
+        public List<Control> TraerControles(int codCultivo)
+        {
+            return cultivoDao.ObtenerControles(codCultivo);
         }
 
         public List<Cultivo> TraerCultivos()
@@ -48,9 +53,13 @@ namespace proyectoHidro.Servicios
             return cultivoDao.ObtenerCultivo(cod);
         }
 
-        public List<TipoCultivo> TraerTipos()
+        public List<TipoC> TraerTiposControles()
         {
-            return cultivoDao.ObtenerTipos();
+            return cultivoDao.ObtenerTiposControles();
+        }
+        public List<TipoC> TraerTiposCultivos()
+        {
+            return cultivoDao.ObtenerTiposCultivos();
         }
 
         public int ProximoCultivo()

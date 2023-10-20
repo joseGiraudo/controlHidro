@@ -68,10 +68,12 @@ create procedure SP_INSERTAR_CULTIVO
 	@fecha datetime,
 	@id_tipo_cul int,
 	@descripcion varchar(250),
-	@genetica varchar(250)
+	@genetica varchar(250),
+	@nro int output
 AS
 BEGIN
 	INSERT INTO cultivos VALUES(@fecha, @id_tipo_cul, @descripcion, @genetica)
+	set @nro = SCOPE_IDENTITY()
 END
 
 
@@ -93,3 +95,27 @@ select * from tipos_cultivos
 
 INSERT INTO cultivos
 VALUES('20230531', 1, 'descripcion 123asdnoa', 'Tubby (Peyote Cookies x Apolo)')
+
+CREATE PROCEDURE SP_CONSULTAR_CONTROLES
+	@codigo int
+AS
+BEGIN
+	SELECT * FROM controles
+	where id_cultivo = @codigo
+END;
+
+create procedure SP_INSERTAR_CONTROL
+	@id_tipo_control int,
+	@fecha datetime,
+	@id_cultivo int,
+	@ph decimal(4,2),
+	@ppm decimal(6,2),
+	@ec decimal(6,2),
+	@observacion varchar(250),
+	@nro int output
+AS
+BEGIN
+	INSERT INTO controles VALUES(@id_tipo_control, @fecha, @id_cultivo, @ph, @ppm, @ec, @observacion)
+	set @nro = SCOPE_IDENTITY()
+END
+

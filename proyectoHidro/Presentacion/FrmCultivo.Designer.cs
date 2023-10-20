@@ -38,13 +38,16 @@
             this.colPPM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAccion = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnAgregarControl = new System.Windows.Forms.Button();
+            this.lblNroCult = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvControles)).BeginInit();
             this.SuspendLayout();
             // 
             // lblGenetica
             // 
             this.lblGenetica.AutoSize = true;
-            this.lblGenetica.Location = new System.Drawing.Point(39, 40);
+            this.lblGenetica.Location = new System.Drawing.Point(12, 40);
             this.lblGenetica.Name = "lblGenetica";
             this.lblGenetica.Size = new System.Drawing.Size(50, 13);
             this.lblGenetica.TabIndex = 0;
@@ -53,7 +56,7 @@
             // lblObservaciones
             // 
             this.lblObservaciones.AutoSize = true;
-            this.lblObservaciones.Location = new System.Drawing.Point(39, 74);
+            this.lblObservaciones.Location = new System.Drawing.Point(12, 72);
             this.lblObservaciones.Name = "lblObservaciones";
             this.lblObservaciones.Size = new System.Drawing.Size(78, 13);
             this.lblObservaciones.TabIndex = 1;
@@ -72,10 +75,10 @@
             this.colPPM,
             this.colEC,
             this.colAccion});
-            this.dgvControles.Location = new System.Drawing.Point(64, 130);
+            this.dgvControles.Location = new System.Drawing.Point(58, 110);
             this.dgvControles.Name = "dgvControles";
             this.dgvControles.ReadOnly = true;
-            this.dgvControles.Size = new System.Drawing.Size(568, 150);
+            this.dgvControles.Size = new System.Drawing.Size(568, 183);
             this.dgvControles.TabIndex = 2;
             // 
             // colCodigo
@@ -126,11 +129,43 @@
             this.colAccion.ReadOnly = true;
             this.colAccion.Width = 75;
             // 
+            // btnAgregarControl
+            // 
+            this.btnAgregarControl.Location = new System.Drawing.Point(483, 81);
+            this.btnAgregarControl.Name = "btnAgregarControl";
+            this.btnAgregarControl.Size = new System.Drawing.Size(143, 23);
+            this.btnAgregarControl.TabIndex = 3;
+            this.btnAgregarControl.Text = "Agregar Control";
+            this.btnAgregarControl.UseVisualStyleBackColor = true;
+            this.btnAgregarControl.Click += new System.EventHandler(this.btnAgregarControl_Click);
+            // 
+            // lblNroCult
+            // 
+            this.lblNroCult.AutoSize = true;
+            this.lblNroCult.Location = new System.Drawing.Point(12, 9);
+            this.lblNroCult.Name = "lblNroCult";
+            this.lblNroCult.Size = new System.Drawing.Size(57, 13);
+            this.lblNroCult.TabIndex = 4;
+            this.lblNroCult.Text = "Cultivo N° ";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(286, 81);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(143, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Actualizar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmCultivo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(693, 305);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lblNroCult);
+            this.Controls.Add(this.btnAgregarControl);
             this.Controls.Add(this.dgvControles);
             this.Controls.Add(this.lblObservaciones);
             this.Controls.Add(this.lblGenetica);
@@ -155,5 +190,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colPPM;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEC;
         private System.Windows.Forms.DataGridViewButtonColumn colAccion;
+        private System.Windows.Forms.Button btnAgregarControl;
+        private System.Windows.Forms.Label lblNroCult;
+        private System.Windows.Forms.Button button1;
     }
 }

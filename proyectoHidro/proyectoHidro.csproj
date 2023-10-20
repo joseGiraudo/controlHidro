@@ -60,6 +60,12 @@
     <Compile Include="Presentacion\FrmCultivo.Designer.cs">
       <DependentUpon>FrmCultivo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\FrmNuevoControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmNuevoControl.Designer.cs">
+      <DependentUpon>FrmNuevoControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\FrmNuevoCultivo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     <Compile Include="Servicios\Servicio.cs" />
     <EmbeddedResource Include="Presentacion\FrmCultivo.resx">
       <DependentUpon>FrmCultivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmNuevoControl.resx">
+      <DependentUpon>FrmNuevoControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmNuevoCultivo.resx">
       <DependentUpon>FrmNuevoCultivo.cs</DependentUpon>
