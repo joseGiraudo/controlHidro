@@ -88,7 +88,8 @@ CREATE PROCEDURE SP_CONSULTAR_CULTIVO
 AS
 BEGIN
 	SELECT * FROM cultivos
-	where id_cultivo = @codigo
+	WHERE id_cultivo = @codigo
+	ORDER BY fecha_inicio DESC, id_cultivo DESC;
 END;
 
 select * from tipos_cultivos
@@ -101,7 +102,8 @@ CREATE PROCEDURE SP_CONSULTAR_CONTROLES
 AS
 BEGIN
 	SELECT * FROM controles
-	where id_cultivo = @codigo
+	WHERE id_cultivo = @codigo
+	ORDER BY fecha_control DESC, id_control DESC;
 END;
 
 create procedure SP_INSERTAR_CONTROL
