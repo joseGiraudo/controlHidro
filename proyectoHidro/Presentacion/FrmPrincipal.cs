@@ -21,13 +21,20 @@ namespace proyectoHidro
             InitializeComponent();
             servicio = new Servicio();
         }
+        enum TCultivos
+        {
+            Automatica = 1,
+            Fotoperiodica,
+            Feminizada,
+            Regular
+        }
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             List<Cultivo> lCultivos = servicio.TraerCultivos();
             foreach (Cultivo c in lCultivos)
             {
-                dgvCultivos.Rows.Add(new object[] { c.CodCultivo, c.Genetica, c.FechaInicio, c.TipoCultivo, "Consultar" });
+                dgvCultivos.Rows.Add(new object[] { c.CodCultivo, c.Genetica, c.FechaInicio, (TCultivos)c.TipoCultivo, "Consultar" });
             }
         }
 

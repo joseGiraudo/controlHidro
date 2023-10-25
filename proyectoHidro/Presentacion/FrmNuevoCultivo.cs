@@ -41,7 +41,7 @@ namespace proyectoHidro.Presentacion
 
         private void CargarTipos()
         {
-            cboTipoCultivo.DataSource = servicio.TraerTiposControles();
+            cboTipoCultivo.DataSource = servicio.TraerTiposCultivos();
             cboTipoCultivo.ValueMember = "Codigo";
             cboTipoCultivo.DisplayMember = "Tipo";
             cboTipoCultivo.DropDownStyle = ComboBoxStyle.DropDownList;

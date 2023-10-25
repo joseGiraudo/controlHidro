@@ -54,7 +54,7 @@ namespace proyectoHidro.Presentacion
 
             if (servicio.CargarControl(control))
             {
-                MessageBox.Show("Se cargo con exito el cultivo");
+                MessageBox.Show("Se cargo con exito el control");
                 this.Close();
             }
         }

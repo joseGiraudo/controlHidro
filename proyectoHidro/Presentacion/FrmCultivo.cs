@@ -34,13 +34,19 @@ namespace proyectoHidro.Presentacion
             // aca deberia traer los controles del cultivo y cargarlos en el dgvControles
             CargarControles();
         }
+        enum TControles
+        {
+            Normal = 1,
+            AgregadoFertis,
+            CambioAgua
+        }
         private void CargarControles()
         {
             lControles = servicio.TraerControles(cultivo.CodCultivo);
             dgvControles.Rows.Clear();
             foreach (Entidades.Control c in lControles)
             {
-                dgvControles.Rows.Add(new object[] { c.CodControl, c.TipoControl, c.FechaControl, c.Ph, c.Ppm, c.Ec, "Observaciones" });
+                dgvControles.Rows.Add(new object[] { c.CodControl, (TControles)c.TipoControl, c.FechaControl, c.Ph, c.Ppm, c.Ec, "Observaciones" });
             }
         }
 
