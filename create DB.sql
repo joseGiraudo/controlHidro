@@ -81,6 +81,7 @@ CREATE PROCEDURE SP_CONSULTAR_CULTIVOS
 AS
 BEGIN
 	SELECT * FROM cultivos
+	ORDER BY fecha_inicio DESC, id_cultivo DESC;
 END;
 
 CREATE PROCEDURE SP_CONSULTAR_CULTIVO
@@ -89,8 +90,9 @@ AS
 BEGIN
 	SELECT * FROM cultivos
 	WHERE id_cultivo = @codigo
-	ORDER BY fecha_inicio DESC, id_cultivo DESC;
 END;
+
+exec sp_consultar_cultivo 1;
 
 select * from tipos_cultivos
 
